@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+.App {
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+img.nav-icon {
+    width: 64px;
+    height: 64px;
+    float: left;
+    margin-right: 0.5rem;
+}
