@@ -1,0 +1,16 @@
+.search-form {
+    display: flex;
+
+    border: 1px inset;
+}
+.search {
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-button {
+    border: none;
+    background: none;
+    float: right;
+}
