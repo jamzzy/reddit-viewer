@@ -1,0 +1,33 @@
+.post-container {
+    background-color: white;
+    width: 80%;
+    margin: 1rem 0;
+    padding: 1rem;
+    
+}
+
+img.comments-icon {
+    width: 1.5rem;
+}
+
+.post-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid black;
+    
+}
+
+.post-info-container div {
+    padding: 1rem;
+}
+
+.commentcount-container {
+    display: flex;
+    align-items: center;
+}
+
+.commentcount-label {
+    padding: 0.2rem;
+
+}

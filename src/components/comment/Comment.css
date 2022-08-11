@@ -1,0 +1,32 @@
+.comment-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
+    padding: 0.5rem;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    
+}
+
+.comment-info-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.comment-text-container {
+    width: 100%;
+    word-wrap: break-word;
+    
+}
+
+.username-text {
+    color: rgb(12, 132, 212);
+}
+
+.postedDate-text {
+    font-style: italic;
+    color: gray;
+}
