@@ -2,17 +2,26 @@
     display: flex;
     width: 85%;
     justify-content: space-between;
-    border: 1px inset;
+    
+    background-color: white;
+    
+    
 }
 .search {
     border: none;
     font-size: 1rem;
     outline: none;
     width: 100%;
+    background-color:rgba(235, 228, 228, 0.774);
+    padding: 0.5rem;
+    border: 1px inset;
+    border-radius: 5px;
 }
 
-.search-button {
-    border: none;
-    background: none;
+.search-img-input {
+    
     float: right;
+    margin-left: 0.3rem;
+    width: 1.9rem;
+    align-self: center;
 }
