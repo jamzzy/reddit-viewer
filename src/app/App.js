@@ -2,7 +2,7 @@
 import './App.css';
 import redditIcon from '../data/icons/reddit.png';
 import { SearchBar } from '../components/searchbar/SearchBar';
-import { Post } from '../components/post/Post';
+import { Posts } from '../components/posts/Posts';
 
 function App() {
   return (
@@ -22,9 +22,7 @@ function App() {
       </header>
 
       <main>
-        <Post />
-        <Post />
-
+        <Posts/>
       </main>
     </div>
   );
