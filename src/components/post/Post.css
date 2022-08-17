@@ -6,6 +6,27 @@
     
 }
 
+.postcontent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    
+}
+
+.postcontent-img {
+    max-width: 100%;
+    margin-top: 1rem;  
+    max-height: 90vh;
+    
+}
+
+.postcontent-heading {
+    align-self: flex-start;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 img.comments-icon {
     width: 1.5rem;
 }
@@ -30,4 +51,9 @@ img.comments-icon {
 .commentcount-label {
     padding: 0.2rem;
 
+}
+
+.author-label {
+    color: blue;
+    font-weight: bold;
 }
