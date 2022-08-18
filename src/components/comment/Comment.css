@@ -25,9 +25,11 @@
 
 .username-text {
     color: rgb(12, 132, 212);
+    font-size: 0.8rem;
 }
 
 .postedDate-text {
     font-style: italic;
     color: gray;
+    font-size: 0.9rem;
 }
