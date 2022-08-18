@@ -9,33 +9,20 @@ export const Posts = () => {
     const dispatch = useDispatch();
     const posts = useSelector(selectPosts);
     const isLoadingPosts = useSelector(selectIsLoadingPosts);
-    
-
-    console.log(isLoadingPosts + "posts below: ");
-    console.log(posts);
 
     useEffect(() => {
-        console.log("huh nani");
         dispatch(loadPosts());
     }, [dispatch])
 
     if (isLoadingPosts) {
-        console.log('adfadfadfadfadfadfadfadfa')
         return <div>loading</div>;
     }
 
     return (
         <div className='posts-container'>
             {
-                
-                    posts.map((post, index) => <Post key={index} post={post} />)
-
-                
-                
+                posts.map((post, index) => <Post key={index} post={post} />)
             }
-            <Post />
-            <Post />
         </div>
-
     );
 }
