@@ -1,5 +1,4 @@
 import './Post.css';
-//import { PostContent } from '../postcontent/PostContent';
 import { Comments } from '../comments/Comments';
 import commentsIcon from '../../data/icons/chat-bubble.png';
 import moment from 'moment';
@@ -10,7 +9,7 @@ export const Post = ({post}) => {
     if(!post) {
         return null;
     }
-    console.log(post);
+
   
     return (
         <div className='post-container'>
@@ -31,7 +30,8 @@ export const Post = ({post}) => {
                 </div>
                 
             </div>
-            <Comments />
+            
+            <Comments postID={post.id} permalink={post.permalink}/>
         </div>
     )
 }
