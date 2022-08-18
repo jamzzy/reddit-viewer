@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 
 export const loadPosts = createAsyncThunk(
     'posts/loadAllPosts',
@@ -27,9 +28,8 @@ export const posts = createSlice({
 
         },
         [loadPosts.fulfilled]: (state, action) => {
-            console.log(action.payload.data.children);
-            state.posts = action.payload.data.children.map(({data}) => {
-                console.log(data);
+            
+            state.posts = action.payload.data.children.map(({ data }) => {
                 return ({
                     author: data.author,
                     created_utc: data.created_utc,
@@ -38,6 +38,7 @@ export const posts = createSlice({
                     permalink: data.permalink,
                     post_hint: data.post_hint,
                     title: data.title,
+                    id: uuidv4(),
 
                 })
             });
@@ -54,7 +55,7 @@ export const posts = createSlice({
 
 export const selectPosts = (state) => state.posts.posts;
 
-export const selectIsLoadingPosts = (state) =>  state.posts.isLoadingPosts;
+export const selectIsLoadingPosts = (state) => state.posts.isLoadingPosts;
 
 export const selectHasErrorLoadingPosts = (state) => state.posts.hasErrorLoadingPosts;
 
