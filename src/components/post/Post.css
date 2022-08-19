@@ -1,8 +1,9 @@
 .post-container {
     background-color: white;
-    width: 80%;
+    width: 100%;
     margin: 1rem 0;
     padding: 1rem;
+    border-radius: 5px 
     
 }
 
@@ -29,6 +30,11 @@
 
 img.comments-icon {
     width: 1.5rem;
+}
+
+img.comments-icon:hover {
+    background-color: rgb(201, 197, 197);
+    cursor: pointer;
 }
 
 .post-info-container {
