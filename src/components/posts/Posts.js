@@ -3,6 +3,7 @@ import './Posts.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPosts, loadPosts, selectIsLoadingPosts, selectHasErrorLoadingPosts } from '../../store/postsSlice/postsSlice';
 import { useEffect } from 'react';
+import { LoadSpinner } from '../loadSpinner/LoadSpinner';
 
 export const Posts = () => {
 
@@ -15,7 +16,11 @@ export const Posts = () => {
     }, [dispatch])
 
     if (isLoadingPosts) {
-        return <div>loading</div>;
+        return (
+            <div className='posts-container'>
+                <LoadSpinner type='posts'/>
+            </div>
+        );
     }
 
     return (

@@ -34,7 +34,6 @@ export const Post = ({post}) => {
                 
             </div>
             {viewComments ? <Comments postID={post.id} permalink={post.permalink} /> : null}
-            
         </div>
     )
 }

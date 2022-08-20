@@ -8,6 +8,7 @@ import {
 } from '../../store/commentsSlice/commentsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { LoadSpinner } from '../loadSpinner/LoadSpinner';
 
 export const Comments = ({postID, permalink}) => {
     const dispatch = useDispatch();
@@ -20,7 +21,11 @@ export const Comments = ({postID, permalink}) => {
     },[dispatch, permalink, postID]);
 
     if(isLoadingComments){
-        return <div>loading comments</div>;
+        return (
+        <div className='comments-container'>
+            <LoadSpinner type={'comments'}/> 
+        </div>
+        )
     }
     
     if(!comments[postID]) {
