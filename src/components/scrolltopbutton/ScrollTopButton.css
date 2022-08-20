@@ -1,0 +1,27 @@
+.scroll-top {
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    background-color: whitesmoke;
+    bottom: 50px;
+    right: 50px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all .5s ease;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.scroll-top:hover {
+    cursor: pointer;
+    background-color: blue;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.arrow-up-icon {
+    width: 100%;
+}

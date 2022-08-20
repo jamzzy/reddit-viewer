@@ -1,9 +1,8 @@
-
 import './App.css';
 import redditIcon from '../data/icons/reddit.png';
 import { SearchBar } from '../components/searchbar/SearchBar';
 import { Posts } from '../components/posts/Posts';
-
+import { ScrollTopButton } from '../components/scrolltopbutton/ScrollTopButton';
 function App() {
   return (
     <div className="App">
@@ -23,6 +22,7 @@ function App() {
 
       <main>
         <Posts/>
+        <ScrollTopButton />
       </main>
     </div>
   );
