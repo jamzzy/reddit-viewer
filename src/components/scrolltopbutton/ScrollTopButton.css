@@ -10,6 +10,7 @@
     transition: all .5s ease;
     padding: 0.5rem;
     border-radius: 0.5rem;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
 }
 
 .scroll-top:hover {

@@ -8,7 +8,7 @@ import {
 } from '../../store/commentsSlice/commentsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { LoadSpinner } from '../loadSpinner/LoadSpinner';
+import { SkeletonLoader } from '../skeletonloader/SkeletonLoader';
 
 export const Comments = ({postID, permalink}) => {
     const dispatch = useDispatch();
@@ -23,7 +23,7 @@ export const Comments = ({postID, permalink}) => {
     if(isLoadingComments){
         return (
         <div className='comments-container'>
-            <LoadSpinner type={'comments'}/> 
+            <SkeletonLoader type={'comments'}/> 
         </div>
         )
     }

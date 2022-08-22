@@ -1,8 +1,8 @@
-import './LoadSpinner.css';
+import './SkeletonLoader.css';
 import '../comment/Comment.css';
 import '../post/Post.css';
 
-export const LoadSpinner = ({ type }) => {
+export const SkeletonLoader = ({ type }) => {
 
     if (type === 'comments') {
         return (

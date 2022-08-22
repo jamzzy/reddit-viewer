@@ -3,22 +3,33 @@ import './Posts.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPosts, loadPosts, selectIsLoadingPosts, selectHasErrorLoadingPosts } from '../../store/postsSlice/postsSlice';
 import { useEffect } from 'react';
-import { LoadSpinner } from '../loadSpinner/LoadSpinner';
+import { SkeletonLoader } from '../skeletonloader/SkeletonLoader';
+import { selectActiveSubreddit, selectIsLoadingSubreddits } from '../../store/subredditsSlice/subredditsSlice';
 
 export const Posts = () => {
 
     const dispatch = useDispatch();
     const posts = useSelector(selectPosts);
     const isLoadingPosts = useSelector(selectIsLoadingPosts);
+    const activeSubreddit = useSelector(selectActiveSubreddit);
+    const isLoadingSubreddits = useSelector(selectIsLoadingSubreddits);
+    
 
     useEffect(() => {
-        dispatch(loadPosts());
-    }, [dispatch])
+        
+       if(activeSubreddit.url === undefined){
+        return;
+       }
+        dispatch(loadPosts(activeSubreddit.url));
 
-    if (isLoadingPosts) {
+        
+        
+    }, [dispatch, activeSubreddit])
+
+    if (isLoadingPosts || isLoadingSubreddits) {
         return (
             <div className='posts-container'>
-                <LoadSpinner type='posts'/>
+                <SkeletonLoader type='posts'/>
             </div>
         );
     }

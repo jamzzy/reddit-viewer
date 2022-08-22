@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const loadPosts = createAsyncThunk(
     'posts/loadAllPosts',
-    async () => {
-        const data = await fetch('https://www.reddit.com/r/mildlyinteresting/.json');
+    async (activeSubreddit) => {
+        const data = await fetch(`https://www.reddit.com${activeSubreddit}/.json`);
         const json = await data.json();
         return json;
     }

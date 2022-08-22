@@ -3,6 +3,7 @@ import redditIcon from '../data/icons/reddit.png';
 import { SearchBar } from '../components/searchbar/SearchBar';
 import { Posts } from '../components/posts/Posts';
 import { ScrollTopButton } from '../components/scrolltopbutton/ScrollTopButton';
+import { DropDownSelect } from '../components/dropdownselect/DropDownSelect';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
             <SearchBar />
           </div>
           <div className='nav-container'>
+            <DropDownSelect />
           </div>
         </nav>
       </header>
