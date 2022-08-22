@@ -7,6 +7,7 @@ import {
     selectIsLoadingSubreddits,
     setActiveSubreddit} from '../../store/subredditsSlice/subredditsSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { SkeletonLoader } from '../skeletonloader/SkeletonLoader';
 
 export const DropDownSelect = () => {
 
@@ -25,7 +26,7 @@ export const DropDownSelect = () => {
     }, [dispatch]);
 
     useEffect(() => {
-        if(subreddits[selectedIndex]){
+        if(subreddits[selectedIndex]) {
             dispatch(setActiveSubreddit(selectedIndex));
         }
         
@@ -44,7 +45,11 @@ export const DropDownSelect = () => {
     }
     
     if(isLoadingSubreddits) {
-        return <div>loading subreddits</div>
+        return (
+        <div className='dropdown-select-container'>
+            <SkeletonLoader type='dropdown' />
+        </div>
+        )
 
     }
 

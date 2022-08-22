@@ -1,6 +1,7 @@
 import './SkeletonLoader.css';
 import '../comment/Comment.css';
 import '../post/Post.css';
+import '../dropdownselect/DropDownSelect.css'
 
 export const SkeletonLoader = ({ type }) => {
 
@@ -33,12 +34,24 @@ export const SkeletonLoader = ({ type }) => {
                     </div>
 
                     <div className='post-info-container'>
-                            <div className='skeleton skeleton-text skeleton-commentcount'></div>
-                            <div className='skeleton skeleton-text skeleton-date'></div>
+                        <div className='skeleton skeleton-text skeleton-commentcount'></div>
+                        <div className='skeleton skeleton-text skeleton-date'></div>
                     </div>
                 </div>
 
             ))
+        )
+    }
+
+    if (type === 'dropdown') {
+        return (
+                <div className='selected-container'>
+                    <div className='skeleton dropdown-icon'></div> 
+                    <div className='skeleton skeleton-text skeleton-text-subreddit'></div>
+                </div>
+            
+
+
         )
     }
 
