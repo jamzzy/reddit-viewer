@@ -8,6 +8,7 @@ import {
     setActiveSubreddit} from '../../store/subredditsSlice/subredditsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { SkeletonLoader } from '../skeletonloader/SkeletonLoader';
+import { clearSearchTerm } from '../../store/searchSlice/searchSlice';
 
 export const DropDownSelect = () => {
 
@@ -28,6 +29,7 @@ export const DropDownSelect = () => {
     useEffect(() => {
         if(subreddits[selectedIndex]) {
             dispatch(setActiveSubreddit(selectedIndex));
+            dispatch(clearSearchTerm());
         }
         
     },[dispatch, selectedIndex, subreddits])
@@ -43,6 +45,7 @@ export const DropDownSelect = () => {
     const handleOnMouseLeave = () => {
         setShowDropDown(false);
     }
+    
     
     if(isLoadingSubreddits) {
         return (

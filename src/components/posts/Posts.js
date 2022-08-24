@@ -5,6 +5,7 @@ import { selectPosts, loadPosts, selectIsLoadingPosts, selectHasErrorLoadingPost
 import { useEffect } from 'react';
 import { SkeletonLoader } from '../skeletonloader/SkeletonLoader';
 import { selectActiveSubreddit, selectIsLoadingSubreddits } from '../../store/subredditsSlice/subredditsSlice';
+import { selectSearchTerm } from '../../store/searchSlice/searchSlice';
 
 export const Posts = () => {
 
@@ -13,6 +14,8 @@ export const Posts = () => {
     const isLoadingPosts = useSelector(selectIsLoadingPosts);
     const activeSubreddit = useSelector(selectActiveSubreddit);
     const isLoadingSubreddits = useSelector(selectIsLoadingSubreddits);
+    const searchTerm = useSelector(selectSearchTerm);
+    const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase()));
     
 
     useEffect(() => {
@@ -37,7 +40,7 @@ export const Posts = () => {
     return (
         <div className='posts-container'>
             {
-                posts.map((post, index) => <Post key={index} post={post} />)
+                filteredPosts.map((post, index) => <Post key={index} post={post} />)
             }
         </div>
     );

@@ -1,10 +1,10 @@
-.search-form {
+.search-container {
     display: flex;
     width: 85%;
     justify-content: space-between;
-    
-    background-color: white;
-    
+    border: 1px inset;
+    border-radius: 5px;
+    background-color:rgba(235, 228, 228, 0.774);
     
 }
 .search {
@@ -14,14 +14,35 @@
     width: 100%;
     background-color:rgba(235, 228, 228, 0.774);
     padding: 0.5rem;
-    border: 1px inset;
-    border-radius: 5px;
+    
 }
 
 .search-img-input {
     
-    float: right;
+    float: left;
     margin-left: 0.3rem;
-    width: 1.9rem;
+    width: 1.5rem;
     align-self: center;
+    
+}
+
+.clear-button {
+    height: 1.2rem;
+    width: 1.2rem;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-right: 0.3rem;
+    padding: 2px;
+    
+    
+}
+
+.clear-button:hover {
+    cursor: pointer;
+}
+
+.clear-icon {
+    height: 100%;
+    
 }
