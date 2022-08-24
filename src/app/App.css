@@ -17,8 +17,15 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    font-size: 1.7rem;
-   
+    
+}
+
+@media only screen and (max-width: 900px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      
+    }
 }
 
 .App {
@@ -26,11 +33,32 @@ nav {
     
 }
 
+@media only screen and (max-width: 360px) {
+    .App {
+        min-width: 360px;
+    }
+}
+
 img.nav-icon {
     width: 64px;
     height: 64px;
     float: left;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
+}
+
+@media only screen and (max-width: 900px) {
+    img.nav-icon {
+        width: 128px;
+        height: 128px;
+      
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    img.nav-icon {
+        width: 64px;
+        height: 64px;
+    }
 }
 
 .nav-container {
@@ -39,4 +67,64 @@ img.nav-icon {
     justify-content: center;
     width: 33%;
     
+}
+
+@media only screen and (max-width: 900px) {
+    .nav-container {
+        width: 75%;
+        margin-top: 2rem;
+        flex-basis: 50%;
+        
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-container {
+        flex-basis: 100%
+    }
+}
+
+.logo {
+    justify-content: flex-end;
+    font-size: 2rem;
+    margin-right: 3rem;
+}
+
+@media only screen and (max-width: 1280px) {
+    .logo {
+      font-size: 1.8rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .logo {
+        justify-content: center;
+        margin-right: 0;
+        font-size: 3.5rem;
+        flex-basis: 100%;
+      
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+       
+        font-size: 2.5rem;
+       
+      
+    }
+}
+
+.subreddit-select {
+    justify-content: flex-start;
+    margin-left: 3rem;
+}
+
+@media only screen and (max-width: 900px) {
+    .subreddit-select {
+        justify-content: center;
+        margin-left: 0;
+        
+      
+    }
 }

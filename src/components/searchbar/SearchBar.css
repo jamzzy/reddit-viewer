@@ -1,12 +1,19 @@
 .search-container {
     display: flex;
-    width: 85%;
+    width: 75%;
     justify-content: space-between;
     border: 1px inset;
     border-radius: 5px;
     background-color:rgba(235, 228, 228, 0.774);
     
 }
+
+@media only screen and (max-width: 1280px) {
+    .search-container {
+      width: 90%;
+    }
+}
+
 .search {
     border: none;
     font-size: 1rem;
@@ -18,7 +25,6 @@
 }
 
 .search-img-input {
-    
     float: left;
     margin-left: 0.3rem;
     width: 1.5rem;

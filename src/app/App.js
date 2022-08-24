@@ -9,14 +9,14 @@ function App() {
     <div className="App">
       <header>
         <nav>
-          <div className='nav-container'>
+          <div className='nav-container logo'>
             <img className="nav-icon" src={redditIcon} alt="reddit" />
             <h1>RedditViewer</h1>
           </div>
           <div className='nav-container'>
             <SearchBar />
           </div>
-          <div className='nav-container'>
+          <div className='nav-container subreddit-select'>
             <DropDownSelect />
           </div>
         </nav>

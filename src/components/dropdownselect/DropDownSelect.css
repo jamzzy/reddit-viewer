@@ -1,5 +1,4 @@
 .dropdown-select-container {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,9 +11,22 @@
     border-radius: 10px;
     border: 2px solid gray;
     padding: 1rem;
-    width: 300px;
+    width: 270px;
     box-shadow: 0 4px 4px rgb(0 0 0 / 0.2);
 
+}
+
+@media only screen and (max-width: 1280px) {
+    .selected-container {
+      width: 230px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .selected-container {
+        width: 230px;
+      
+    }
 }
 
 .selected-container:hover {
@@ -28,7 +40,6 @@
 
 .dropdown-menu {
     position: absolute;
-    
     border: 2px solid gray;
     border-radius: 10px;
     box-shadow: 0 4px 4px rgb(0 0 0 / 0.2);
@@ -38,6 +49,13 @@
     overflow: scroll;
     overflow-x: hidden;
     overflow-y: overlay;
+}
+
+@media only screen and (max-width: 900px) {
+    .dropdown-menu {
+        top: 275px;
+      
+    }
 }
 
 .dropdown-icon {
@@ -52,11 +70,37 @@
     font-size: 1.3rem;
 }
 
+@media only screen and (max-width: 1280px) {
+    .selected-label {
+      font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .selected-label {
+        font-size: 1rem;
+      
+    }
+}
+
 .dropdown-item {
     display: flex;
     align-items: center;
     padding: 1rem;
-    width: 300px;
+    width: 270px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .dropdown-item {
+      width: 230px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .dropdown-item {
+        width: 230px;
+      
+    }
 }
 
 .dropdown-item:hover {
