@@ -3,7 +3,8 @@ import { Comments } from '../comments/Comments';
 import commentsIcon from '../../data/icons/chat-bubble.png';
 import moment from 'moment';
 import React, {useState} from 'react';
-
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm'
 
 export const Post = ({post}) => {
 
@@ -12,13 +13,42 @@ export const Post = ({post}) => {
     if(!post) {
         return null;
     }
-
   
     return (
         <div className='post-container'>
             <div className='postcontent-container'>
                 <h1 className='postcontent-heading'>{post.title}</h1>
-                {post.post_hint === 'image' ? <img className='postcontent-img' src={post.media} alt={post.title}/> : <p>no image</p>}
+
+                {
+                post.post_hint === 'image' 
+                && 
+                <img className='postcontent-img' src={post.url} alt={post.title} />
+                }
+
+                {
+                (post.post_hint === 'link' || post.post_hint === 'rich:video' || post.url.includes('gallery')) 
+                && 
+                <div className='postcontent-text'>
+                    <a href={post.url}>{post.url}</a>
+                </div>
+                }
+
+                {
+                post.selftext 
+                && 
+                <div className='postcontent-text' dangerouslySetInnerHTML={{__html: post.selftext}}></div>
+                }
+
+                {
+                post.post_hint === 'hosted:video' 
+                && 
+                post.is_video 
+                && 
+                (<video controls>
+                    <source src={post.media.reddit_video.fallback_url} />
+                    Video not supported by browser
+                </video>)
+                }
                 
             </div>
             

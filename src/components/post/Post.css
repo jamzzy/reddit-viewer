@@ -1,3 +1,9 @@
+video {
+    margin-top: 1rem;
+    width: 100%;
+    max-height: 90vh;
+}
+
 .post-container {
     background-color: white;
     width: 100%;
@@ -21,6 +27,98 @@
     margin-top: 1rem;  
     max-height: 90vh;
     
+}
+
+.postcontent-text {
+   
+    display: inline-block;
+    width: 95%;
+    margin-top: 1rem;
+    max-height: 80vh;
+    overflow: scroll;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    overflow-y: auto;
+    
+    
+}
+
+.postcontent-text ul {
+    list-style-type: square;
+    list-style-position: inside;
+    padding-left: 40px;
+    padding-bottom: 1rem;
+}
+
+.postcontent-text li {
+    display: list-item;
+    
+}
+
+.postcontent-text h1 {
+    
+    font-size: 1.3rem;
+}
+
+.postcontent-text h2 {
+    
+    font-size: 1.2rem;
+}
+
+.postcontent-text h3 {
+    
+    font-size: 1.1rem;
+}
+
+.postcontent-text h4 {
+    
+    font-size: 1rem;
+}
+
+.postcontent-text h5 {
+    
+    font-size: 0.9rem;
+}
+
+.postcontent-text h6 {
+    
+    font-size: 0.8rem;
+}
+
+.postcontent-text h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.postcontent-text p {
+    display: block;
+    margin-bottom: 0.5rem;
+    
+}
+
+.postcontent-text li > p {
+    word-wrap: normal;
+    display: inline-block;
+}
+
+.postcontent-text strong {
+    font-weight: bold;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.postcontent-text sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.postcontent-text table {
+    margin: 1rem 0;
+}
+.postcontent-text tbody, td, tr, thead, th{
+    border: 2px solid gray;
+    padding: 0.5rem;
 }
 
 .postcontent-heading {
