@@ -3,8 +3,6 @@ import { Comments } from '../comments/Comments';
 import commentsIcon from '../../data/icons/chat-bubble.png';
 import moment from 'moment';
 import React, {useState} from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'
 
 export const Post = ({post}) => {
 
