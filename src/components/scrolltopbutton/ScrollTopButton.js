@@ -1,5 +1,5 @@
 import './ScrollTopButton.css';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import arrowUp from '../../data/icons/arrow-up.png';
 export const ScrollTopButton = () => {
 
@@ -24,7 +24,7 @@ export const ScrollTopButton = () => {
 
     window.addEventListener('scroll', toggleVisible);
 
-    if(visible) {
+    if (visible) {
         return (
             <div className='scroll-top fade-in' onClick={scrollToTop}>
                 <img className='arrow-up-icon' src={arrowUp} alt='scroll-to-top' />
@@ -34,8 +34,8 @@ export const ScrollTopButton = () => {
 
     return (
         <div className='scroll-top' onClick={scrollToTop}>
-            <img className='arrow-up-icon' src={arrowUp} alt='scroll-to-top'/>
-        </div> 
+            <img className='arrow-up-icon' src={arrowUp} alt='scroll-to-top' />
+        </div>
     )
 
 }

@@ -6,7 +6,7 @@ export const loadPosts = createAsyncThunk(
     async (activeSubreddit) => {
         const data = await fetch(`https://www.reddit.com${activeSubreddit}/.json?raw_json=1`);
         const json = await data.json();
-        
+
         return json;
     }
 )
@@ -29,7 +29,7 @@ export const posts = createSlice({
 
         },
         [loadPosts.fulfilled]: (state, action) => {
-            
+
             state.posts = action.payload.data.children.map(({ data }) => {
                 console.log(data.selftext);
                 console.log(data.selftext_html);
@@ -47,7 +47,7 @@ export const posts = createSlice({
                     is_video: data.is_video,
                 })
             });
-            
+
             state.isLoadingPosts = false;
             state.hasErrorLoadingPosts = false;
         },

@@ -23,7 +23,7 @@ function App() {
       </header>
 
       <main>
-        <Posts/>
+        <Posts />
         <ScrollTopButton />
       </main>
     </div>

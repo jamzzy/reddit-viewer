@@ -45,11 +45,11 @@ export const SkeletonLoader = ({ type }) => {
 
     if (type === 'dropdown') {
         return (
-                <div className='selected-container'>
-                    <div className='skeleton dropdown-icon'></div> 
-                    <div className='skeleton skeleton-text skeleton-text-subreddit'></div>
-                </div>
-            
+            <div className='selected-container'>
+                <div className='skeleton dropdown-icon'></div>
+                <div className='skeleton skeleton-text skeleton-text-subreddit'></div>
+            </div>
+
 
 
         )

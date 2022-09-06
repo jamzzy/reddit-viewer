@@ -33,7 +33,7 @@ export const Comments = ({ postID, permalink }) => {
     if (hasErrorLoadingComments) {
         return (
             <div className='comments-container'>
-                <ErrorHandler errorMsg='comments'/>
+                <ErrorHandler errorMsg='comments' />
             </div>
         )
 
