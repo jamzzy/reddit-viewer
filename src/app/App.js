@@ -9,9 +9,13 @@ function App() {
     <div className="App">
       <header>
         <nav>
-          <div className='nav-container logo'>
-            <img className="nav-icon" src={redditIcon} alt="reddit" />
-            <h1>RedditViewer</h1>
+          <div className='nav-container logo' onClick={() => window.location.reload()}>
+            <img 
+            className="nav-icon" 
+            src={redditIcon} 
+            alt="reddit viewer logo" 
+            />
+            <h1 className='logo-label'>RedditViewer</h1>
           </div>
           <div className='nav-container'>
             <SearchBar />

@@ -83,7 +83,7 @@ export const DropDownSelect = () => {
                             subreddits.map((subreddit, i) => (
                                 <li className='dropdown-item' key={i} onClick={() => setSelectedIndex(i)}>
                                     <img className='dropdown-icon' src={subreddit.icon_img ? subreddit.icon_img : 'https://cdn-icons-png.flaticon.com/512/892/892692.png'} alt={subreddit.url} />
-                                    <h1 className='selected-label'>{subreddit.display_name}</h1>
+                                    <h1 className='menu-label'>{subreddit.display_name}</h1>
                                 </li>
                             ))
                         }
