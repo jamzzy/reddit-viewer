@@ -5,10 +5,12 @@ import {
     selectSubreddits,
     selectActiveSubreddit,
     selectIsLoadingSubreddits,
+    selectHasErrorLoadingSubreddits,
     setActiveSubreddit} from '../../store/subredditsSlice/subredditsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { SkeletonLoader } from '../skeletonloader/SkeletonLoader';
 import { clearSearchTerm } from '../../store/searchSlice/searchSlice';
+import { ErrorHandler } from '../errorhandler/ErrorHandler';
 
 export const DropDownSelect = () => {
 
@@ -16,6 +18,7 @@ export const DropDownSelect = () => {
     const subreddits = useSelector(selectSubreddits);
     const activeSubreddit = useSelector(selectActiveSubreddit);
     const isLoadingSubreddits = useSelector(selectIsLoadingSubreddits);
+    const hasErrorLoadingSubreddits = useSelector(selectHasErrorLoadingSubreddits);
    
 
     const [showDropDown, setShowDropDown] = useState(false);
@@ -54,6 +57,14 @@ export const DropDownSelect = () => {
         </div>
         )
 
+    }
+    
+    if (hasErrorLoadingSubreddits) {
+        return (
+            <div className='dropdown-select-container'>
+                <ErrorHandler errorMsg='subreddits' />
+            </div>
+        )
     }
 
     return (

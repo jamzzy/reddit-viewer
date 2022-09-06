@@ -45,11 +45,6 @@ export const posts = createSlice({
                     selftext: data.selftext_html,
                     url: data.url,
                     is_video: data.is_video,
-                    
-
-
-            
-
                 })
             });
             

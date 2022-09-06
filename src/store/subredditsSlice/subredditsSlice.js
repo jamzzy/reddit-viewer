@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const loadSubreddits = createAsyncThunk(
     'subreddits/loadAllSubreddits',
     async() => {
+        //const data = await fetch ('https://www.reddit.com/subreddits/.json');
         const data = await fetch ('https://www.reddit.com/subreddits/.json');
         const json = await data.json();
         const subreddits = json.data.children;
@@ -55,7 +56,7 @@ export const subreddits = createSlice({
         },
         [loadSubreddits.rejected]: (state, action) => {
             state.isLoadingSubreddits = false;
-            state.hasErrorLoadingSubreddits = false;
+            state.hasErrorLoadingSubreddits = true;
         },
     }
 })
@@ -65,6 +66,8 @@ export const selectSubreddits = (state) => state.subreddits.subreddits;
 export const selectActiveSubreddit = (state) => state.subreddits.activeSubreddit;
 
 export const selectIsLoadingSubreddits = (state) => state.subreddits.isLoadingSubreddits;
+
+export const selectHasErrorLoadingSubreddits = (state) => state.subreddits.hasErrorLoadingSubreddits;
 
 export const { setActiveSubreddit } = subreddits.actions;
 

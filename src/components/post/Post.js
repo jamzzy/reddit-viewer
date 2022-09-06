@@ -42,11 +42,12 @@ export const Post = ({post}) => {
                 && 
                 post.is_video 
                 && 
-                (<video controls>
+                ( 
+                <video controls>
                     <source src={post.media.reddit_video.fallback_url} />
                     Video not supported by browser
-                </video>)
-                }
+                </video>
+                )}
                 
             </div>
             

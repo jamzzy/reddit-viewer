@@ -1,0 +1,32 @@
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    
+
+}
+
+
+
+.refresh-icon {
+    height: 50px;
+    width: 50px;
+    
+}
+
+.refresh-icon:hover {
+    cursor: pointer;
+   
+}
+
+
+
+.subreddits-type {
+    flex-direction: row;
+    margin: 0;
+}
+
+.subreddits-type .refresh-icon {
+    margin-left: 0.5rem;
+}
