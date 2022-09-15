@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const loadSubreddits = createAsyncThunk(
     'subreddits/loadAllSubreddits',
     async () => {
-        //const data = await fetch ('https://www.reddit.com/subreddits/.json');
+
         const data = await fetch('https://www.reddit.com/subreddits/.json');
         const json = await data.json();
         const subreddits = json.data.children;
@@ -20,7 +20,6 @@ export const loadSubreddits = createAsyncThunk(
         return { subreddits, icons };
     }
 )
-
 
 export const subreddits = createSlice({
     name: 'subreddits',

@@ -41,7 +41,6 @@ export const comments = createSlice({
 
             state.comments[postID] = commentsObj;
 
-
             state.isLoadingComments = false;
             state.hasErrorLoadingComments = false;
         },

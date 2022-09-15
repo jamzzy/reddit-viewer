@@ -11,8 +11,4 @@ export const ErrorHandler = ({ errorMsg }) => {
         </div>
 
     )
-
-
-
-
 }

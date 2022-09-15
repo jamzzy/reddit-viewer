@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 export const loadPosts = createAsyncThunk(
     'posts/loadAllPosts',
     async (activeSubreddit) => {
-        const data = await fetch(`https://www.reddit.com${activeSubreddit}/.json?raw_json=1`);
+        const data = await fetch(`https://www.reddit.com${activeSubreddit}.json?raw_json=1`);
         const json = await data.json();
 
         return json;
@@ -31,8 +31,7 @@ export const posts = createSlice({
         [loadPosts.fulfilled]: (state, action) => {
 
             state.posts = action.payload.data.children.map(({ data }) => {
-                console.log(data.selftext);
-                console.log(data.selftext_html);
+
                 return ({
                     author: data.author,
                     created_utc: data.created_utc,

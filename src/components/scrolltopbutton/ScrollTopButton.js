@@ -18,7 +18,7 @@ export const ScrollTopButton = () => {
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
-            behaviour: 'smooth'
+            behavior: 'smooth'
         })
     }
 
@@ -26,14 +26,14 @@ export const ScrollTopButton = () => {
 
     if (visible) {
         return (
-            <div className='scroll-top fade-in' onClick={scrollToTop}>
+            <div data-testid='scrollTopButtonVisible' className='scroll-top fade-in' onClick={scrollToTop}>
                 <img className='arrow-up-icon' src={arrowUp} alt='scroll-to-top' />
             </div>
         )
     }
 
     return (
-        <div className='scroll-top' onClick={scrollToTop}>
+        <div data-testid='scrollTopButtonInvisible' className='scroll-top' onClick={scrollToTop}>
             <img className='arrow-up-icon' src={arrowUp} alt='scroll-to-top' />
         </div>
     )

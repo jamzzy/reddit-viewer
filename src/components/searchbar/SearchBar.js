@@ -31,7 +31,7 @@ export const SearchBar = () => {
             {
                 searchTerm.length > 0 && (
                     <button className='clear-button' type='button' onClick={onSearchTermClearHandler}>
-                        <img src={'https://cdn-icons-png.flaticon.com/512/60/60994.png'} className='clear-icon' alt="" />
+                        <img src={'https://cdn-icons-png.flaticon.com/512/60/60994.png'} className='clear-icon' alt="clear search term" />
                     </button>
                 )
             }

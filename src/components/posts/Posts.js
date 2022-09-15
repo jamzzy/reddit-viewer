@@ -35,7 +35,7 @@ export const Posts = () => {
 
     }, [dispatch, activeSubreddit])
 
-    if (isLoadingPosts) {
+    if (isLoadingPosts || posts.length === 0) {
         return (
             <div className='posts-container'>
                 <SkeletonLoader type='posts' />
