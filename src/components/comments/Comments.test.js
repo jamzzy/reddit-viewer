@@ -9,6 +9,7 @@ const server = setupServer(...handlers);
 
 describe('Comments', () => {
 
+    //Setup for api mocking
     beforeAll(() => server.listen());
     afterEach(() => server.resetHandlers());
     afterAll(() => server.close());
@@ -20,10 +21,11 @@ describe('Comments', () => {
 
         renderWithProviders(<Comments postID={testID} permalink={testPermalink} />);
 
+        //Loading comments
         expect(screen.getAllByTestId(/comments-skeleton/i)).toHaveLength(3);
 
+        //After some time, comments are loaded and appear
         const comments = await screen.findAllByText(/test comment/i);
-
         expect(comments).toHaveLength(3);
 
     });

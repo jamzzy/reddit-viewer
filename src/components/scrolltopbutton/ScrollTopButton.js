@@ -5,6 +5,7 @@ export const ScrollTopButton = () => {
 
     const [visible, setVisible] = useState(false);
 
+    //The back to top button appears when the user has scrolled down a bit
     const toggleVisible = () => {
         const scrolled = document.documentElement.scrollTop;
         if (scrolled > 300) {
@@ -15,6 +16,7 @@ export const ScrollTopButton = () => {
         }
     };
 
+    //Scrolls back to top of the app
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -22,7 +24,13 @@ export const ScrollTopButton = () => {
         })
     }
 
+    //Scroll listener for the button to appear
     window.addEventListener('scroll', toggleVisible);
+
+    /*
+    Returns the back to top button JSX. Will allow the user to scroll all the way to the
+    top of the app. When visible state is true, the button appears, otherwise its invisible.
+    */
 
     if (visible) {
         return (

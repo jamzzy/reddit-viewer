@@ -5,6 +5,7 @@ import '../dropdownselect/DropDownSelect.css'
 
 export const SkeletonLoader = ({ type }) => {
 
+    //JSX for comment skeleton
     if (type === 'comments') {
         return (
             [...Array(3)].map((e, index) => (
@@ -22,6 +23,7 @@ export const SkeletonLoader = ({ type }) => {
         )
     }
 
+    //JSX for posts skeleton
     if (type === 'posts') {
         return (
             [...Array(25)].map((e, index) => (
@@ -43,15 +45,14 @@ export const SkeletonLoader = ({ type }) => {
         )
     }
 
+    //JSX for dropdown skeleton
     if (type === 'dropdown') {
         return (
             <div data-testid='dropdown-skeleton' className='selected-container'>
                 <div className='skeleton dropdown-icon'></div>
                 <div className='skeleton skeleton-text skeleton-text-subreddit'></div>
             </div>
-
-
-
+            
         )
     }
 

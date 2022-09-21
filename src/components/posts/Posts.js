@@ -21,9 +21,10 @@ export const Posts = () => {
     const hasErrorLoadingPosts = useSelector(selectHasErrorLoadingPosts);
     const activeSubreddit = useSelector(selectActiveSubreddit);
     const searchTerm = useSelector(selectSearchTerm);
+    //Filters the posts according to the searchTerm
     const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
-
+    //Loads the posts if theres an active subreddit
     useEffect(() => {
 
         if (activeSubreddit.url === undefined) {
@@ -31,10 +32,9 @@ export const Posts = () => {
         }
         dispatch(loadPosts(activeSubreddit.url));
 
-
-
     }, [dispatch, activeSubreddit])
 
+    //A skelton loader displays when post are loading or they don't exist
     if (isLoadingPosts || posts.length === 0) {
         return (
             <div className='posts-container'>
@@ -43,6 +43,7 @@ export const Posts = () => {
         );
     }
 
+    //An error message displays when an error occurs loading posts
     if (hasErrorLoadingPosts) {
         return (
             <div className='posts-container'>
@@ -50,9 +51,9 @@ export const Posts = () => {
             </div>
         )
 
-
     }
 
+    //Returns a container containing all the post components given posts
     return (
         <div className='posts-container'>
             {

@@ -1,6 +1,7 @@
 html {
     background-color: rgb(190, 181, 181);
 }
+
 main {
     display: flex;
     flex-direction: column;
@@ -9,10 +10,12 @@ main {
     
 
 }
+
 header {
     background-color: white;
     box-shadow: 0 10px 20px rgb(0 0 0 / 0.2);
 }
+
 nav {
     display: flex;
     align-items: center;

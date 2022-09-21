@@ -13,6 +13,7 @@ describe('SkeletonLoader', () => {
 
         const dropdownSkeleton = screen.queryByTestId('dropdown-skeleton');
 
+        //Checking only comment skeletons appear
         expect(commentsSkeleton).toHaveLength(3);
         expect(postsSkeleton).not.toBeInTheDocument();
         expect(dropdownSkeleton).not.toBeInTheDocument();
@@ -29,6 +30,7 @@ describe('SkeletonLoader', () => {
 
         const dropdownSkeleton = screen.queryByTestId('dropdown-skeleton');
 
+        //Checking only post skeleton appears
         expect(postsSkeleton).toHaveLength(25);
         expect(commentsSkeleton).not.toBeInTheDocument();
         expect(dropdownSkeleton).not.toBeInTheDocument();
@@ -45,6 +47,7 @@ describe('SkeletonLoader', () => {
 
         const dropdownSkeleton = screen.getByTestId('dropdown-skeleton');
 
+        //Checking only dropdown skeleton appears
         expect(dropdownSkeleton).toBeInTheDocument();
         expect(commentsSkeleton).not.toBeInTheDocument();
         expect(postsSkeleton).not.toBeInTheDocument();

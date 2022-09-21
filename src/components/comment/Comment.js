@@ -3,10 +3,12 @@ import moment from 'moment';
 
 export const Comment = ({ comment }) => {
 
+    //If there is no comment passed, null is returned
     if (!comment) {
         return null;
     }
 
+    //Returns JSX to display a comment
     return (
         <div className='comment-container'>
             <div className='comment-info-container'>

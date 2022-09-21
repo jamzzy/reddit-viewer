@@ -18,14 +18,18 @@ describe('Posts', () => {
 
         const { store } = renderWithProviders(<Posts />);
 
+        /*
+        This is usually dispatched in the dropdown component, 
+        In order to test the posts component, need to load subreddits for testing
+        */
         store.dispatch(loadSubreddits());
 
+        //Loading skeleton displays when posts are loading
         const postsSkeleton = screen.getAllByTestId('posts-skeleton');
-
         expect(postsSkeleton).toHaveLength(25);
 
+        //After some time, the posts should appear
         const posts = await screen.findAllByText(/test self text/i);
-
         expect(posts).toHaveLength(2);
 
     })

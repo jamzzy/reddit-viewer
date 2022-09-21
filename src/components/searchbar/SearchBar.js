@@ -15,14 +15,17 @@ export const SearchBar = () => {
     const searchTerm = useSelector(selectSearchTerm);
     const activeSubreddit = useSelector(selectActiveSubreddit);
 
+    //dispatches to store when there are changes in the searchbar
     const onSearchChangeHandler = (e) => {
         dispatch(setSearchTerm(e.target.value));
     };
 
+    //clears the search bar and store search term
     const onSearchTermClearHandler = () => {
         dispatch(clearSearchTerm());
     }
 
+    //Returns the JSX for the search bar
     return (
         <div className='search-container'>
             <img className='search-img-input' src={magnifyingGlass} alt="Submit Search" />

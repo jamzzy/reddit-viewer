@@ -17,11 +17,13 @@ export const Comments = ({ postID, permalink }) => {
     const isLoadingComments = useSelector(selectIsLoadingComments);
     const hasErrorLoadingComments = useSelector(selectHasErrorLoadingComments);
 
+    //Dispatch loadComments, gets the comments for the post through the reddit api
     useEffect(() => {
         dispatch(loadComments({ postID, permalink }));
 
     }, [dispatch, permalink, postID]);
 
+    //When the comments are loading, a loading skeleton is displayed 
     if (isLoadingComments) {
         return (
             <div className='comments-container'>
@@ -30,6 +32,7 @@ export const Comments = ({ postID, permalink }) => {
         )
     }
 
+    //When an error has occured loading comments, an error message is displayed
     if (hasErrorLoadingComments) {
         return (
             <div className='comments-container'>
@@ -39,10 +42,12 @@ export const Comments = ({ postID, permalink }) => {
 
     }
 
+    //When comments don't exist for the given postID, returns null
     if (!comments[postID]) {
         return null;
     }
 
+    //returns a container, containing comment components to display the comments
     return (
         <div className='comments-container'>
             {

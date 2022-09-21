@@ -23,6 +23,7 @@ describe('ErrorHandler', () => {
 
     it('should reload the window when the refresh icon is clicked', () => {
 
+        //Mocking window.location
         delete window.location
         window.location = {
             ...window.location,
@@ -32,8 +33,10 @@ describe('ErrorHandler', () => {
         render(<ErrorHandler errorMsg={'posts'} />);
         const refreshIcon = screen.getByAltText(/reload/i);
 
+        //Clicking refresh icon
         fireEvent.click(refreshIcon);
 
+        //Should call the window.location.reload function
         expect(window.location.reload).toHaveBeenCalled();
 
     });

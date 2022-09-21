@@ -25,11 +25,13 @@ export const DropDownSelect = () => {
     const [showDropDown, setShowDropDown] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
 
+    //Loading subreddits through the reddit api
     useEffect(() => {
         dispatch(loadSubreddits());
 
     }, [dispatch]);
 
+    //Setting the active subreddit 
     useEffect(() => {
         if (subreddits[selectedIndex]) {
             dispatch(setActiveSubreddit(selectedIndex));
@@ -38,6 +40,7 @@ export const DropDownSelect = () => {
 
     }, [dispatch, selectedIndex, subreddits])
 
+    //When a different subreddit is selected, the dropdown menu is closed
     useEffect(() => {
         setShowDropDown(false);
     }, [selectedIndex]);
@@ -50,7 +53,7 @@ export const DropDownSelect = () => {
         setShowDropDown(false);
     }
 
-
+    //When subreddits are loading, a skeleton loader is displayed
     if (isLoadingSubreddits) {
         return (
             <div className='dropdown-select-container'>
@@ -60,6 +63,7 @@ export const DropDownSelect = () => {
 
     }
 
+    //When an error occurs loading the subreddits, an error message is displayed
     if (hasErrorLoadingSubreddits) {
         return (
             <div className='dropdown-select-container'>
@@ -68,6 +72,7 @@ export const DropDownSelect = () => {
         )
     }
 
+    //Returns the jsx for the dropdown container, and the dropdown menu when clicked
     return (
         <div className='dropdown-select-container' >
             <div className='selected-container' onClick={handleOnClick} onMouseLeave={handleOnMouseLeave}>

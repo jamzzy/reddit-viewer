@@ -8,10 +8,12 @@ export const Post = ({ post }) => {
 
     const [viewComments, setViewComments] = useState(false);
 
+    //If not post is passed, return null
     if (!post) {
         return null;
     }
 
+    //Returns JSX for container displaying, post content, and post info, and comment components
     return (
         <div className='post-container'>
             <div className='postcontent-container'>
