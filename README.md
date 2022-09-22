@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Reddit Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple read-only reddit web viewer app built with React.
 
-## Available Scripts
+## Table Of Contents
+* [Introduction](#Introduction)
+* [Technologies](#Technologies)
+* [Wireframe](#Wireframe)
+* [Implementation](#Implementation)
+* [Testing](#Testing)
 
-In the project directory, you can run:
+### Introduction
 
-### `npm start`
+This reddit viewer was created to practice and further learn the React front-end library, Redux, APIs, and testing. Users are able to view content from different subreddits, filter posts, and read comments.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Technologies
+Project is created with:
+* HTML 5
+* CSS 3
+* React 18.2
+* Redux Toolkit 1.8.4
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Wireframe
 
-### `npm test`
+The UI was conceptualized through simple wireframing. Below was the wireframe the app was based on. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![RedditViewerWireframe](./src/data/wireframe/Reddit_Viewer_Wireframe.jpg)
 
-### `npm run build`
+### Implementation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app was created with React front-end library and Redux Toolkit to manage state. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Reddit data was obtained through Reddit's api, more specifically their json api. Content in reddit is accessible in json form if you append .json to the url. For example, ```https://www.reddit.com/r/wholesomememes/.json```, will return the r/wholesomememes data in json.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Testing
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Through the testing library, and jest, unit testing was implemented for most components in the app. Integration tests were implemented for components that interact with the redux store, such as Posts, and Comments. Instead of mocking the store, an instance of the actual store was used in testing. This meant being able to test the component UI and the app's real redux store logic.
