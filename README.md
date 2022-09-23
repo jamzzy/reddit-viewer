@@ -28,9 +28,11 @@ The UI was conceptualized through simple wireframing. Below was the wireframe th
 
 ### Implementation
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 The app was created with React front-end library and Redux Toolkit to manage state. 
 
-Reddit data was obtained through Reddit's api, more specifically their json api. Content in reddit is accessible in json form if you append .json to the url. For example, ```https://www.reddit.com/r/wholesomememes/.json```, will return the r/wholesomememes data in json.
+Reddit data was obtained through Reddit's api, more specifically their json api. Content in reddit is accessible in json form if you append ".json" to the url. For example, ```https://www.reddit.com/r/wholesomememes/.json```, will return the r/wholesomememes data in json.
 
 ### Testing
 
