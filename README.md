@@ -2,6 +2,8 @@
 
 A simple read-only reddit web viewer app built with React.
 
+[Click here to check it out live!](https://jamzzy.github.io/reddit-viewer)
+
 ## Table Of Contents
 * [Introduction](#Introduction)
 * [Technologies](#Technologies)
